@@ -1,0 +1,31 @@
+<script>
+    function fn(...ary) {
+        // ES5 时的方法
+        // console.log(arguments);  // 类数组集合[]
+        // arguments.__proto__ = Array.prototype  // 原型链继承 这时才可以使用数组的方法
+        // arguments.pop()
+
+
+        // ES6 时的方法
+        console.log(ary);  // 是一个数组
+        // ...ary 剩余运算符
+    }
+    fn(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+
+    // 函数分为定义和执行
+    // 函数的形参和实参
+    // 函数的arguments
+    // return
+    // 匿名函数
+
+
+    function fc(x = 100, y) {
+        console.log(x);
+        // 如果函数有实参，实参不是undefined，会将函数形参的默认值覆盖
+    }
+    fc(undefined, 2)
+
+
+    // 函数的执行  形成私有作用域  形参赋值  变量提升  代码从上往下执行  代码销毁
+</script>

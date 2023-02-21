@@ -1,0 +1,63 @@
+<script>
+  // 函数的定义
+  // 1、开辟一个堆内存的空间地址；16进制的字符
+  // 2、把函数体中代码当作字符串方式存储起来
+  // 3、把空间地址复制给函数名
+
+  // function fn() { }  // 提前进行变量提升  声明加定义
+  // let fn = function (a, b) {  // 函数表达式   代码执行到这一步 函数 才进行 声明加定义
+  //     console.log(this)  //window
+  // }
+  // fn(1, 2)
+  // typeof fn --> "function"
+
+  // 变成箭头函数
+  // let fn = (a, b) => { }
+  // fn(1, 2)
+
+  // function fn(...a) { }
+  // let fn = (...a) => { }
+  // fn(1, 2, 3, 4, 5)
+  // let fn = a => { console.log(a) }
+  //       1.如果形参参数只有一个，可以省略参数位置的小括号；当有多个或没有的话，必须加上
+  // function fn(a) {
+  //     return a
+  // }
+  // let fn = a => { return a }
+  // let fn = a => a
+  // let fn = a => { console.log(100) }
+  //       2.如果函数体中只有一条语句；可以省略大括号；
+  //       3.函数体中只有return + 值，那么可以省略大括号和return
+
+  // let f = () => { }
+  // let fn = a => f
+  // console.log(fn(100));  // () => { }
+
+  // let fn = a => {return console.log(100);}   //console.log(100) 它的返回值是undefined
+  // let fn = a => {return undefined}
+
+  // let fn = () => { return { name: 1 } }
+  // 省略后
+  // let fn = () => { name: 1 }   // undefined
+  // 再次省略
+  // let fn = () => ({ name: 1 })
+  // console.log(fn())
+  //          4.如果箭头函数返回一个对象，并且省略了return，那么需要在对象的外面包一个小括号
+
+  // function fn(a) {
+  //     return function (b) {
+  //         return function (c) {
+  //             return a + b + c
+  //         }
+  //     }
+  // }
+  // console.log(fn(1)(2)(3));
+  // 把这个函数改成箭头函数
+  let fn = a => b => c => a + b + c
+  console.log(fn(1)(2)(3))
+
+  // 自执行函数
+  ;(() => {
+    console.log(100)
+  })()
+</script>
